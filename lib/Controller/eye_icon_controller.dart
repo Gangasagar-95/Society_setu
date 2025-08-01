@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class LoginscreenController extends GetxController {
+class EyeIconController extends GetxController {
   RxBool eye = true.obs;
 
   void eyeicon() {
