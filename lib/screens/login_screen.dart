@@ -1,12 +1,182 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:society_setu/Color/app_colors.dart';
+import 'package:society_setu/Controller/eye_icon_controller.dart';
+import 'package:society_setu/Routes/app_routes.dart';
+import 'package:society_setu/custom_widget/logo_containers.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  final loginscreenobj = Get.put(LoginscreenController());
+  final emailCtrl = TextEditingController();
+  final passwordCtrl = TextEditingController();
+  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-    );
+    return Obx(() {
+      return Scaffold(
+        backgroundColor: Appcolor.bgcolor,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+              child: Image.asset(
+                "assets/images/newapplogo.png",
+                height: 300,
+                width: 300,
+              ),
+            ),
+            Text(
+              "Login to your Account",
+              style: TextStyle(color: Appcolor.textcolor, fontSize: 24),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 24,
+                right: 24,
+                top: 24,
+                bottom: 20,
+              ),
+              child: TextFormField(
+                controller: emailCtrl,
+                decoration: InputDecoration(
+                  // border: OutlineInputBorder(),
+                  hintText: "Enter your email",
+                  prefixIcon: Icon(Icons.email, size: 20, color: Colors.grey),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Appcolor.primarycolor),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return "email can not be null";
+                  }
+                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    return "enter a valid email";
+                  }
+                  return null;
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 24, right: 24, bottom: 30),
+              child: TextFormField(
+                controller: passwordCtrl,
+                obscureText: loginscreenobj.eye.value,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Appcolor.primarycolor),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  //border: OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      loginscreenobj.eye == false
+                          ? Icons.remove_red_eye
+                          : Icons.visibility_off,
+                      size: 20,
+
+                      color: loginscreenobj.eye == false
+                          ? Colors.red
+                          : Appcolor.primarycolor,
+                    ),
+                    onPressed: () {
+                      loginscreenobj.eyeicon();
+                    },
+                  ),
+                  hintText: "Enter  your password",
+                  prefixIcon: Icon(Icons.lock, size: 20, color: Colors.black),
+                ),
+                validator: (value) {
+                  if (value == null || value.trim().isEmpty) {
+                    return "password is required and can not be null";
+                  }
+                  if (value.length < 7) {
+                    return "Password must be atleast 7 character";
+                  }
+                  return null;
+                },
+              ),
+            ),
+
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Appcolor.buttoncolor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 130,
+                  right: 130,
+                  top: 10,
+                  bottom: 10,
+                ),
+                child: Text(
+                  "Sign in",
+                  style: TextStyle(
+                    color: Appcolor.textcolor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ),
+
+            Align(
+              alignment: Alignment.bottomRight,
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed(Approutes.forgotpassword);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 20, bottom: 50),
+                  child: Text(
+                    "Forget password?",
+                    style: TextStyle(color: Appcolor.primarycolor),
+                  ),
+                ),
+              ),
+            ),
+            Text(
+              "-Or sign in with-",
+              style: TextStyle(fontSize: 16, color: Appcolor.subtextcolor),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 24,
+                right: 24,
+               top: 10,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  LogoContainers(assetimage: "assets/images/google_logo.png"),
+                  SizedBox(width: 20),
+                  LogoContainers(assetimage: "assets/images/facebook_logo.png"),
+                  SizedBox(width: 20),
+                  LogoContainers(assetimage: "assets/images/twitter_logo.png"),
+                ],
+              ),
+            ),
+            SizedBox(height: 10,),
+            Center(
+              child: Row(
+                children: [
+                  Text("Don’t have an account?",style: TextStyle(color: Appcolor.subtextcolor,fontSize: 16),
+                  ),
+                   Text("Sign up",style: TextStyle(color: Appcolor.primarycolor,fontSize: 16)),
+                ],
+              ),
+            )          ],
+        ),
+      );
+    });
   }
 }
