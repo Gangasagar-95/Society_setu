@@ -27,14 +27,15 @@ class LoginScreen extends StatelessWidget {
     return Obx(() {
       return Scaffold(
         backgroundColor: Appcolor.bgcolor,
-        body: Form(
-          key: _formkey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Center(
+
+        body: SingleChildScrollView(
+        
+          child: Form(
+            key: _formkey,
+            child: Column(
+            
+              children: [
+                Center(
                   child: Column(
                     children: [
                       Image.asset(
@@ -51,15 +52,15 @@ class LoginScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                          left: 24,
-                          right: 24,
-                          top: 24,
+                          left: 20,
+                          right: 20,
+                          top: 20,
                           bottom: 20,
                         ),
                         child: TextFormField(
                           controller: emailCtrl,
                           decoration: InputDecoration(
-                            // border: OutlineInputBorder(),
+                         
                             hintText: "Enter your email",
                             prefixIcon: Icon(
                               Icons.email,
@@ -88,8 +89,8 @@ class LoginScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                          left: 24,
-                          right: 24,
+                          left: 20,
+                          right: 20,
                           bottom: 30,
                         ),
                         child: TextFormField(
@@ -102,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            //border: OutlineInputBorder(),
+                            
                             suffixIcon: IconButton(
                               icon: Icon(
                                 eyeIconcontrollerobj.eye == false
@@ -149,10 +150,10 @@ class LoginScreen extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(
-                            left: 130,
-                            right: 130,
-                            top: 10,
-                            bottom: 10,
+                            left: 120,
+                            right: 120,
+                            // top: 10,
+                            // bottom: 10,
                           ),
                           child: Text(
                             "Sign in",
@@ -182,7 +183,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),
+                      ), 
                       Text(
                         "-Or sign in with-",
                         style: TextStyle(
@@ -190,14 +191,14 @@ class LoginScreen extends StatelessWidget {
                           color: Appcolor.subtextcolor,
                         ),
                       ),
-                      SizedBox(height: 30),
-                      Padding(
+                      
+                      Padding( 
                         padding: const EdgeInsets.only(
                           left: 24,
                           right: 24,
-                          top: 24,
+                        
                         ),
-                        child: Row(
+                        child: Row( 
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             LogoContainers(
@@ -215,7 +216,7 @@ class LoginScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      // SizedBox(height: 10,),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -243,8 +244,8 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
