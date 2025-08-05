@@ -57,6 +57,7 @@ class EmailVerification extends StatelessWidget {
                   "sent to your email address",
                   style: TextStyle(color: Appcolor.subtextcolor, fontSize: 20),
                 ),
+               
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -6,4 +6,6 @@ class Approutes {
   static const String resetpassword = "/reset_password_screen";
   static const String emailverification = "/email_verification_screen";
   static const String forgotpassword = "/forgot_password_screen";
+  static const String homescreen = "/home_screen";
+
 }

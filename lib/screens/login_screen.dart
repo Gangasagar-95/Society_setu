@@ -5,18 +5,21 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:society_setu/Color/app_colors.dart';
 import 'package:society_setu/Controller/eye_icon_controller.dart';
+import 'package:society_setu/Controller/logincontroller.dart';
 import 'package:society_setu/Routes/app_routes.dart';
 import 'package:society_setu/custom_widget/logo_containers.dart';
 
 class LoginScreen extends StatelessWidget {
   final eyeIconcontrollerobj = Get.put(EyeIconController());
-  final emailCtrl = TextEditingController();
-  final passwordCtrl = TextEditingController();
+  final logincontroller = Get.put(LoginController());
+  //final emailCtrl = TextEditingController();
+  //final passwordCtrl = TextEditingController();
   final _formkey = GlobalKey<FormState>();
 
   void login() {
     if (_formkey.currentState!.validate()) {
-      Get.offNamed(Approutes.splashscreen);
+      //Get.offNamed(Approutes.);
+      logincontroller.loginUser();
     }
   }
 
@@ -29,11 +32,9 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Appcolor.bgcolor,
 
         body: SingleChildScrollView(
-        
           child: Form(
             key: _formkey,
             child: Column(
-            
               children: [
                 Center(
                   child: Column(
@@ -58,9 +59,8 @@ class LoginScreen extends StatelessWidget {
                           bottom: 20,
                         ),
                         child: TextFormField(
-                          controller: emailCtrl,
+                          controller: logincontroller.emailCtrl,
                           decoration: InputDecoration(
-                         
                             hintText: "Enter your email",
                             prefixIcon: Icon(
                               Icons.email,
@@ -94,7 +94,7 @@ class LoginScreen extends StatelessWidget {
                           bottom: 30,
                         ),
                         child: TextFormField(
-                          controller: passwordCtrl,
+                          controller: logincontroller.passwordCtrl,
                           obscureText: eyeIconcontrollerobj.eye.value,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            
+
                             suffixIcon: IconButton(
                               icon: Icon(
                                 eyeIconcontrollerobj.eye == false
@@ -183,7 +183,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ), 
+                      ),
                       Text(
                         "-Or sign in with-",
                         style: TextStyle(
@@ -191,14 +191,10 @@ class LoginScreen extends StatelessWidget {
                           color: Appcolor.subtextcolor,
                         ),
                       ),
-                      
-                      Padding( 
-                        padding: const EdgeInsets.only(
-                          left: 24,
-                          right: 24,
-                        
-                        ),
-                        child: Row( 
+
+                      Padding(
+                        padding: const EdgeInsets.only(left: 24, right: 24),
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             LogoContainers(
