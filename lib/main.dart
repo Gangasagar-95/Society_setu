@@ -7,6 +7,7 @@ import 'package:society_setu/screens/create_account_screen.dart';
 import 'package:society_setu/screens/email_verification_screen.dart';
 import 'package:society_setu/screens/forgot_password_screen.dart';
 import 'package:society_setu/screens/login_screen.dart';
+import 'package:society_setu/screens/maid_screen.dart';
 import 'package:society_setu/screens/reset_password_screen.dart';
 import 'package:society_setu/screens/splash_screen.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', //token == null ? 'dummyscreen' : '/Tab_screen',
 
       routes: {
-        "/": (context) => SplashScreen(),
+        "/": (context) => MaidScreen(),
         "/login_screen": (context) => LoginScreen(),
         "/create_account_Screen": (context) => CreateAccount(),
         "/forgot_password_screen": (context) => ForgotPassword(),
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         "/reset_password_screen": (context) => ResetPassword(),
         "/splash_screen": (context) => SplashScreen(),
         "/home_screen": (context) => Homescreen(),
+        "/maid_screen": (context) => MaidScreen(),
       },
     );
   }

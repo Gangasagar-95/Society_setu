@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+
 import 'package:society_setu/Color/app_colors.dart';
 import 'package:society_setu/Routes/app_routes.dart';
 
@@ -10,7 +10,7 @@ class EmailVerification extends StatelessWidget {
 
   void login() {
     if (_formkey.currentState!.validate()) {
-      Get.offNamed(Approutes.splashscreen);
+      Get.offNamed(Approutes.resetpassword);
     }
   }
 

@@ -11,7 +11,7 @@ class ResetPassword extends StatelessWidget {
 
   void login() {
     if (_formkey.currentState!.validate()) {
-      Get.offNamed(Approutes.splashscreen);
+      Get.offNamed(Approutes.createaccount);
     }
   }
 
