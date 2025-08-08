@@ -5,8 +5,8 @@ import 'package:society_setu/custom_widget/call_container.dart';
 import 'package:society_setu/custom_widget/custom_button.dart';
 import 'package:society_setu/custom_widget/textformfield.dart';
 
-class MaidScreen extends StatelessWidget {
-  const MaidScreen({super.key});
+class Streetlight extends StatelessWidget {
+  const Streetlight({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +29,14 @@ class MaidScreen extends StatelessWidget {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/images/maid.jpg",
+                  "assets/images/lamp_light.jpg",
                   height: 150,
                   width: 150,
                 ),
               ),
               Center(
                 child: Text(
-                  "Maid Not coming",
+                  "Street light Not Working",
                   style: GoogleFonts.josefinSans(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
@@ -46,17 +46,15 @@ class MaidScreen extends StatelessWidget {
 
               SizedBox(height: 20),
 
-              CustomTextField(label: "Maid Category", hint: "Utensils"),
-
-              CustomTextField(label: "Date of absence", hint: "23/07/2025"),
+              CustomTextField(label: "Location", hint: "Main gate"),
 
               CustomTextField(label: "Description", hint: "Complaint details"),
 
-             CustomButton(text: "Submit Complaint", onPressed: () {}),
+              CustomButton(text: "Submit Complaint", onPressed: () {}),
               SizedBox(height: 25),
 
               Text(
-                "Call Maid ?",
+                "Call Electrician/ Municipality ?",
                 textAlign: TextAlign.left,
                 style: GoogleFonts.josefinSans(
                   fontSize: 20,
@@ -68,23 +66,16 @@ class MaidScreen extends StatelessWidget {
               SizedBox(height: 1),
 
               ContactCard(
-                name: "Sunita sathe",
-                role: "Sweeper",
-                availableTime: "8 AM to 8 PM",
+                name: "Ram Dhale",
+                role: "Muncipality",
+                availableTime: "8 AM to 9 PM",
                 towers: "A,B,C",
                 onCallTap: () {},
               ),
               ContactCard(
-                name: "Kavita Kale",
-                role: "Cooker",
-                availableTime: "8 AM to 8 PM",
-                towers: "A,B,C",
-                onCallTap: () {},
-              ),
-              ContactCard(
-                name: "Nita Kamble",
-                role: "Sectatery",
-                availableTime: "8 AM to 8 PM",
+                name: "Raja Dhale",
+                role: "Electrician",
+                availableTime: "8 AM to 9 PM",
                 towers: "A,B,C",
                 onCallTap: () {},
               ),

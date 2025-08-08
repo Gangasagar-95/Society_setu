@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:society_setu/screens/Homescreen.dart';
-import 'dart:async';
+import 'package:society_setu/screens/dashboard.dart';
 
-import 'package:society_setu/screens/login_screen.dart'; // for Timer
+import 'package:society_setu/screens/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,24 +12,14 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  String token = ''; // ← You can fetch from SharedPreferences or secure storage
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: 5),
-      vsync: this,
-    )..repeat();
-    Timer(Duration(seconds: 5), checkLogin);
-  }
+  
+  String token = '';
 
   void checkLogin() {
     if (token.isNotEmpty) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Homescreen()),
+        MaterialPageRoute(builder: (context) => Dashscreen()),
       );
     } else {
       Navigator.pushReplacement(
@@ -57,13 +45,11 @@ class _SplashScreenState extends State<SplashScreen>
             end: Alignment.bottomCenter,
           ),
         ),
-        child: 
-        RotationTransition(
-          turns: _controller,
+        child: Center(
           child: Image.asset(
             "assets/images/applogo.PNG",
-            width: 500,
-            height: double.infinity,
+            width: 400,
+            height: 400,
           ),
         ),
       ),

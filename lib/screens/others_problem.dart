@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:society_setu/Color/app_colors.dart';
 import 'package:society_setu/custom_widget/call_container.dart';
 import 'package:society_setu/custom_widget/custom_button.dart';
 import 'package:society_setu/custom_widget/textformfield.dart';
 
-class MaidScreen extends StatelessWidget {
-  const MaidScreen({super.key});
+class OthersProblem extends StatelessWidget {
+  const OthersProblem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +30,14 @@ class MaidScreen extends StatelessWidget {
             children: [
               Center(
                 child: Image.asset(
-                  "assets/images/maid.jpg",
+                  "assets/images/others_problem.jpg",
                   height: 150,
                   width: 150,
                 ),
               ),
               Center(
                 child: Text(
-                  "Maid Not coming",
+                  "Other Problem",
                   style: GoogleFonts.josefinSans(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
@@ -46,17 +47,14 @@ class MaidScreen extends StatelessWidget {
 
               SizedBox(height: 20),
 
-              CustomTextField(label: "Maid Category", hint: "Utensils"),
+              CustomTextField(label: "Location", hint: "Main gate"),
 
-              CustomTextField(label: "Date of absence", hint: "23/07/2025"),
-
-              CustomTextField(label: "Description", hint: "Complaint details"),
-
-             CustomButton(text: "Submit Complaint", onPressed: () {}),
+              CustomTextField(label: "Description", hint: "Complaint"),
+              CustomButton(text: "Submit Complaint", onPressed: () {}),
               SizedBox(height: 25),
 
               Text(
-                "Call Maid ?",
+                "Call ?",
                 textAlign: TextAlign.left,
                 style: GoogleFonts.josefinSans(
                   fontSize: 20,
@@ -68,23 +66,16 @@ class MaidScreen extends StatelessWidget {
               SizedBox(height: 1),
 
               ContactCard(
-                name: "Sunita sathe",
-                role: "Sweeper",
-                availableTime: "8 AM to 8 PM",
+                name: "Ratan Misal",
+                role: "carpenter",
+                availableTime: "8 Am to 8 PM",
                 towers: "A,B,C",
                 onCallTap: () {},
               ),
               ContactCard(
-                name: "Kavita Kale",
-                role: "Cooker",
-                availableTime: "8 AM to 8 PM",
-                towers: "A,B,C",
-                onCallTap: () {},
-              ),
-              ContactCard(
-                name: "Nita Kamble",
-                role: "Sectatery",
-                availableTime: "8 AM to 8 PM",
+                name: "Anuj Pawar",
+                role: "plumber",
+                availableTime: "8 Am to 8 PM",
                 towers: "A,B,C",
                 onCallTap: () {},
               ),

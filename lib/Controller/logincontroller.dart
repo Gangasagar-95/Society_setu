@@ -41,7 +41,7 @@ class LoginController extends GetxController {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString('token', loginData.token ?? "");
 
-        Get.offNamed(Approutes.homescreen);
+        Get.offNamed(Approutes.dashscreen);
       } else {
         final error = jsonDecode(response.body);
         Get.snackbar(
