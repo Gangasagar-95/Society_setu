@@ -4,9 +4,27 @@ import 'package:society_setu/Color/app_colors.dart';
 import 'package:society_setu/custom_widget/call_container.dart';
 import 'package:society_setu/custom_widget/custom_button.dart';
 import 'package:society_setu/custom_widget/textformfield.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class MaidScreen extends StatelessWidget {
   const MaidScreen({super.key});
+
+//  final String phoneNumber = "+917822027057"; // Your number
+
+  Future<void> _makeDirectCall(String phoneNumber) async {
+    // Request permission
+    if (await Permission.phone.request().isGranted) {
+      final Uri callUri = Uri(scheme: 'tel', path: phoneNumber);
+      if (await canLaunchUrl(callUri)) {
+        await launchUrl(callUri, mode: LaunchMode.externalApplication);
+      } else {
+        debugPrint("Could not launch $callUri");
+      }
+    } else {
+      debugPrint("Phone permission not granted");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +90,7 @@ class MaidScreen extends StatelessWidget {
                 role: "Sweeper",
                 availableTime: "8 AM to 8 PM",
                 towers: "A,B,C",
-                onCallTap: () {},
+                onCallTap: () => _makeDirectCall("+917822027057"),
               ),
               ContactCard(
                 name: "Kavita Kale",

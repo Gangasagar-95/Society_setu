@@ -145,7 +145,10 @@ class LoginScreen extends StatelessWidget {
                         ),
             
                        
-                         CustomButton(text:  "Sign in", onPressed: (){login();}),
+                         CustomButton(text:  "Sign in", onPressed: (){
+                          
+                          login();
+                         }),
                         Align(
                           alignment: Alignment.bottomRight,
                           child: TextButton(
