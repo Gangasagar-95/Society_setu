@@ -19,7 +19,7 @@ class Dashscreen extends StatelessWidget {
             SizedBox(height: 30),
 
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 20),
+              padding: const EdgeInsets.only(left: 40),
               child: Row(
                 children: [
                   CustomOutlineButton(
@@ -43,7 +43,7 @@ class Dashscreen extends StatelessWidget {
             ),
             SizedBox(height: 15),
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 20),
+              padding: const EdgeInsets.only(left: 40),
               child: Row(
                 children: [
                   CustomOutlineButton(
@@ -66,7 +66,7 @@ class Dashscreen extends StatelessWidget {
             ),
             SizedBox(height: 15),
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 20),
+              padding: const EdgeInsets.only(left: 40),
               child: Row(
                 children: [
                   CustomOutlineButton(
@@ -89,7 +89,7 @@ class Dashscreen extends StatelessWidget {
             ),
             SizedBox(height: 15),
             Padding(
-              padding: const EdgeInsets.only(left: 30, right: 20),
+              padding: const EdgeInsets.only(left: 40,),
               child: Row(
                 children: [
                   CustomOutlineButton(

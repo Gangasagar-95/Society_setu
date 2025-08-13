@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-//import 'package:flutter_application_2/models/login_model.dart';
-//import 'package:flutter_application_2/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';

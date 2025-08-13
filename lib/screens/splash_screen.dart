@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:society_setu/screens/dashboard.dart';
 
 import 'package:society_setu/screens/login_screen.dart';
+import 'package:society_setu/screens/tabs.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
     } else {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
+        MaterialPageRoute(builder: (context) => Tabs()),
       );
     }
   }

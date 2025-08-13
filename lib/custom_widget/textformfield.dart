@@ -19,36 +19,37 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizedBox(width: 10);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: GoogleFonts.josefinSans(fontSize: 20)),
-        Padding(
-          padding: const EdgeInsets.only(top: 12, bottom: 20),
-          child: SizedBox(
-            height: 50,
-            width: double.infinity,
-            child: TextFormField(
-              decoration: InputDecoration(
-                hintText: hint,
-                hintStyle: GoogleFonts.josefinSans(
-                  fontSize: 18,
-                  color: Appcolor.subtextcolor,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Appcolor.primarycolor),
-                ),
-
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Appcolor.primarycolor),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20,left: 15,right: 15),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: GoogleFonts.josefinSans(fontSize: 20)),
+          SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: hint,
+                  hintStyle: GoogleFonts.josefinSans(
+                    fontSize: 18,
+                    color: Appcolor.subtextcolor,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Appcolor.primarycolor),
+                  ),
+      
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(color: Appcolor.primarycolor),
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
-      ],
+          
+        ],
+      ),
     );
   }
 }

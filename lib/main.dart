@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:society_setu/screens/complaint.dart';
 import 'package:society_setu/screens/create_account_screen.dart';
 import 'package:society_setu/screens/dashboard.dart';
 import 'package:society_setu/screens/dog_problem.dart';
@@ -11,10 +11,13 @@ import 'package:society_setu/screens/garbage_problem.dart';
 import 'package:society_setu/screens/login_screen.dart';
 import 'package:society_setu/screens/maid_screen.dart';
 import 'package:society_setu/screens/no_watersupply.dart';
+import 'package:society_setu/screens/notification_screen.dart';
 import 'package:society_setu/screens/others_problem.dart';
+import 'package:society_setu/screens/profile_screen.dart';
 import 'package:society_setu/screens/reset_password_screen.dart';
 import 'package:society_setu/screens/splash_screen.dart';
 import 'package:society_setu/screens/street_light.dart';
+import 'package:society_setu/screens/tabs.dart';
 import 'package:society_setu/screens/tenant_issue.dart';
 
 void main() async {
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', //token == null ? 'dummyscreen' : '/Tab_screen',
 
       routes: {
-       "/": (context) => MaidScreen(),
+        "/": (context) => Tabs(),
         "/login_screen": (context) => LoginScreen(),
         "/create_account_Screen": (context) => CreateAccount(),
         "/forgot_password_screen": (context) => ForgotPassword(),
@@ -46,12 +49,16 @@ class MyApp extends StatelessWidget {
         "/splash_screen": (context) => SplashScreen(),
         "/dash_screen": (context) => Dashscreen(),
         "/maid_screen": (context) => MaidScreen(),
-         "/dog_problem_screen": (context) => DogsScreen(),
-          "/no_water_supply": (context) => NoWatersupply(),
-          "/street_light": (context) => Streetlight(),
-          "/tenant_issue": (context) => Tenantissue(),
-           "/others_problem": (context) => OthersProblem(),
-           "/garbage_screen": (context) =>Garbage(),
+        "/dog_problem_screen": (context) => DogsScreen(),
+        "/no_water_supply": (context) => NoWatersupply(),
+        "/street_light": (context) => Streetlight(),
+        "/tenant_issue": (context) => Tenantissue(),
+        "/others_problem": (context) => OthersProblem(),
+        "/garbage_screen": (context) => Garbage(),
+        "/complaint_screen": (context) => Complaints(),
+        "/notification_screen": (context) => NotificationScreen(),
+        "/profile_screen": (context) => Profile(),
+        "/tab_screen": (context) => Tabs(),
       },
     );
   }

@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'package:society_setu/Color/app_colors.dart';
 import 'package:society_setu/custom_widget/call_container.dart';
 import 'package:society_setu/custom_widget/custom_button.dart';
 import 'package:society_setu/custom_widget/textformfield.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NoWatersupply extends StatelessWidget {
   const NoWatersupply({super.key});
+  Future<void> _makeDirectCall(String phoneNumber) async {
+    // Request permission
+    if (await Permission.phone.request().isGranted) {
+      final Uri callUri = Uri(scheme: 'tel', path: phoneNumber);
+      if (await canLaunchUrl(callUri)) {
+        await launchUrl(callUri, mode: LaunchMode.externalApplication);
+      } else {
+        debugPrint("Could not launch $callUri");
+      }
+    } else {
+      debugPrint("Phone permission not granted");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +86,7 @@ class NoWatersupply extends StatelessWidget {
                 role: "Muncipality",
                 availableTime: "8 Am to 7 PM",
                 towers: "A,B,C",
-                onCallTap: () {},
+                onCallTap: () => _makeDirectCall("+917822027057"),
               ),
             ],
           ),

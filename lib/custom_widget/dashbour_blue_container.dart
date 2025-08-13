@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:society_setu/Color/app_colors.dart';
 
-
 class CustomTopAppBar extends StatelessWidget {
   final String text;
   const CustomTopAppBar({super.key, required this.text});
@@ -12,10 +11,8 @@ class CustomTopAppBar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 30),
       decoration: BoxDecoration(
-        color: Color(0xFF9550F5),
-        borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(30),
-        ),
+        color:Appcolor.primarycolor,
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +39,7 @@ class CustomTopAppBar extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
 
@@ -50,9 +47,13 @@ class CustomTopAppBar extends StatelessWidget {
 
           /// Title Text
           Text(
-           text ,
-             style: GoogleFonts.josefinSans(fontSize: 24, fontWeight: FontWeight.w600,color: Appcolor.bgcolor ),
-          )
+            text,
+            style: GoogleFonts.josefinSans(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+              color: Appcolor.bgcolor,
+            ),
+          ),
         ],
       ),
     );

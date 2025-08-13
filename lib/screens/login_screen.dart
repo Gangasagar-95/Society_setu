@@ -61,8 +61,7 @@ class LoginScreen extends StatelessWidget {
                             top: 20,
                             bottom: 20,
                           ),
-                          child: 
-                        TextFormField(
+                          child: TextFormField(
                             controller: logincontroller.emailCtrl,
                             decoration: InputDecoration(
                               hintText: "Enter your email",
@@ -97,9 +96,7 @@ class LoginScreen extends StatelessWidget {
                             // right: 20,
                             bottom: 30,
                           ),
-                          child:
-                          
-                           TextFormField(
+                          child: TextFormField(
                             controller: logincontroller.passwordCtrl,
                             obscureText: eyeIconcontrollerobj.eye.value,
                             decoration: InputDecoration(
@@ -109,14 +106,14 @@ class LoginScreen extends StatelessWidget {
                                 ),
                                 borderRadius: BorderRadius.circular(8),
                               ),
-            
+
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   eyeIconcontrollerobj.eye == false
                                       ? Icons.remove_red_eye
                                       : Icons.visibility_off,
                                   size: 20,
-            
+
                                   color: eyeIconcontrollerobj.eye == false
                                       ? Colors.red
                                       : Appcolor.primarycolor,
@@ -143,12 +140,13 @@ class LoginScreen extends StatelessWidget {
                             },
                           ),
                         ),
-            
-                       
-                         CustomButton(text:  "Sign in", onPressed: (){
-                          
-                          login();
-                         }),
+
+                        CustomButton(
+                          text: "Sign in",
+                          onPressed: () {
+                            login();
+                          },
+                        ),
                         Align(
                           alignment: Alignment.bottomRight,
                           child: TextButton(
@@ -174,9 +172,13 @@ class LoginScreen extends StatelessWidget {
                             color: Appcolor.subtextcolor,
                           ),
                         ),
-            
+
                         Padding(
-                          padding: const EdgeInsets.only(left: 24, right: 24,top: 20),
+                          padding: const EdgeInsets.only(
+                            left: 24,
+                            right: 24,
+                            top: 20,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -195,7 +197,7 @@ class LoginScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-            
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
